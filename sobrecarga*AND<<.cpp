@@ -20,8 +20,12 @@ public:
     DistanciaDoisPontos operator*(DistanciaDoisPontos N){
         this->x = N.x - x;
         this->y = N.y - y;
+    }
 
-        cout << sqrt(pow(x,2) + pow(y,2)) << endl;
+    ostream& operator<<(ostream &output){
+        output << sqrt(pow(x,2) + pow(y,2)) << endl;
+
+        return output;
 
     }
 };
@@ -34,5 +38,7 @@ int main() {
     DistanciaDoisPontos func2(5, 5);
 
     func * func2;
+
+    func << cout;
     return 0;
 }
